@@ -9,7 +9,8 @@ import router from '../assets/images/router-dom.png';
 import reagir from '../assets/images/reagir.png';
 import styledimg from '../assets/images/styledimg.png';
 import css from '../assets/images/iconcss.png';
-import html from '../assets/images/icon-html.png';
+import html from '../assets/images/icon-html.jpg';
+import sass from '../assets/images/sass.png';
 
 const SliderContainer = styled.div`
   width: 90%;
@@ -100,6 +101,9 @@ const SliderDeTecnologias = () => {
         </div>
         <div>
           <img src={router} alt="React Router" />
+        </div>
+        <div>
+          <img src={sass} alt="React Router" /> 
         </div>
       </Slider>
     </SliderContainer>
