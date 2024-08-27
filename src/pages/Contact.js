@@ -1,5 +1,7 @@
 // src/pages/Contact.js
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import emailjs from '@emailjs/browser';
 import Button from '../components/Button';
 
 const ContactSection = styled.section`
@@ -45,20 +47,72 @@ const TextArea = styled.textarea`
   color: #fff;
   font-size: 1rem;
   height: 150px;
+  resize: none;
 `;
 
-function Contact() {
+const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [textareaRows, setTextareaRows] = useState(1);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if (name === '' || email === '' || message === '') {
+      alert("Preencha todos os campos");
+      return;
+    }
+
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email
+    };
+
+    emailjs.send("service_6n3k3e6", "template_zdv04fr", templateParams, "eb6YouwGZ_PxGm0rD")
+      .then((response) => {
+        console.log("Email enviado:", response.status, response.text);
+        alert("Email enviado com sucesso!");
+        setName('');
+        setEmail('');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar email:", error);
+        alert("Erro ao enviar email. Por favor, tente novamente mais tarde.");
+      });
+  };
+
   return (
     <ContactSection id="contact">
       <h2>Contact Me</h2>
-      <Form>
-        <Input type="text" placeholder="Your Name" />
-        <Input type="email" placeholder="Your Email" />
-        <TextArea placeholder="Your Message"></TextArea>
-        <Button>Send Message</Button>
+      <Form onSubmit={sendEmail}>
+        <Input
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Input
+          type="email"
+          placeholder="Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <TextArea
+          placeholder="Your Message"
+          value={message}
+          onChange={(e) => {
+            setMessage(e.target.value);
+            const rows = Math.ceil(e.target.scrollHeight / 20); // Ajusta o número de linhas baseado na altura do texto
+            setTextareaRows(rows);
+          }}
+          rows={textareaRows}
+        />
+        <Button type="submit">Send Message</Button>
       </Form>
     </ContactSection>
   );
-}
+};
 
 export default Contact;
