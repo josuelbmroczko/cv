@@ -5,6 +5,10 @@ import PetShop from '../assets/images/PetShop.png'
 import contabilidade from '../assets/images/contabilidade.png' 
 import adv2 from '../assets/images/adv2.png'
 import adv1 from '../assets/images/adv1.png'
+import simples from '../assets/images/simples.png'
+import academia from '../assets/images/academia.png'
+
+
 const ProjectsSection = styled.section`
   padding: 100px 50px;
   background-color: #0f0f0f;
@@ -32,25 +36,37 @@ function Projects() {
       link:'https://comercio2.vercel.app/',
       image: PetShop,
       title: 'Project 1',
-      description: 'A cool frontend project.',
+      description: 'Projeto petshop / Veterinario',
     },
     {
       link:'https://contabil-five.vercel.app/',
       image: contabilidade,
       title: 'Project 2',
-      description: 'Another awesome project.',
+      description: 'Landing Page - Contabilidade.',
     },
     {
       link:'https://adevogado2-main.vercel.app/',
       image: adv2,
-      title: 'Project 2',
-      description: 'Another awesome project.',
+      title: 'Project 3',
+      description: 'Landing Page - advogado.',
     },
     {
       link:'https://adv-main1.vercel.app/',
       image: adv1,
-      title: 'Project 2',
-      description: 'Another awesome project.',
+      title: 'Project 4',
+      description: 'Landing Page - advogado + equipe.',
+    },
+    {
+      link:'https://landing-page-simples-bay.vercel.app/',
+      image: simples,
+      title: 'Project 5',
+      description: 'Landing Page - Em andamento', academia
+    },
+    {
+      link:'https://academia-a.vercel.app/',
+      image: academia,
+      title: 'Project 6',
+      description: 'Landing Page - Academia Em andamento', 
     },
     // Adicione mais projetos aqui
   ];
