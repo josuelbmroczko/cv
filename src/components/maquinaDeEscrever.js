@@ -1,3 +1,6 @@
+// documentaçao que usei para fazer a maquina de escrever
+// https://blog.formacao.dev/como-fazer-o-efeito-de-maquina-de-escrever-com-react-js/
+
 import { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 

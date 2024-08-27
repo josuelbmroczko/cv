@@ -5,6 +5,7 @@ import systemLoquazImg from '../assets/images/SystemLoquaz.png';
 import projetoGeracaoResgate from '../assets/images/projetoGeracaoSaude.png';
 import projetoPolitico from '../assets/images/projetoPolitico.png';
 import { MaquinaDeEscrever } from '../components/maquinaDeEscrever';  
+import SliderDeTecnologias from '../components/sliderDeTecnologias';
 
 const HomeSection = styled.section`
   
@@ -34,7 +35,7 @@ const StyledLink = styled(Link)`
   margin-top: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, background-color 0.3s ease;
-
+margin-bottom: 30px;
   &:hover {
     transform: translateY(-3px);
     background-color: #0097A7;
@@ -123,6 +124,8 @@ function Home() {
         ))}
       </ProjectsGrid>
       <StyledLink to="/projects">Clique e veja mais Projetos</StyledLink>
+      
+<SliderDeTecnologias/> 
     </HomeSection>
   );
 }
