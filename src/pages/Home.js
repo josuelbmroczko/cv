@@ -42,6 +42,8 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledTextContainer = styled.div`
+position: relative;
+top: 10px;
   font-size: 1.5rem;
   color: #ffffff;
   margin: 20px 0;
@@ -108,6 +110,7 @@ function Home() {
         />
       </StyledTextContainer>
       <CustomParagraph>"Aqui estão alguns dos meus projetos que estão ativamente hospedados e disponíveis online."</CustomParagraph>
+      <CustomParagraph>Todos criados com React.JS, styled-components,flex-box e Router.</CustomParagraph>
       <ProjectsGrid>
         {projects.map((project, index) => (
           <ProjectCard

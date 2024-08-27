@@ -1,7 +1,10 @@
 // src/pages/Projects.js
 import styled from 'styled-components';
 import ProjectCard from '../components/ProjectCard';
-
+import PetShop from '../assets/images/PetShop.png'
+import contabilidade from '../assets/images/contabilidade.png' 
+import adv2 from '../assets/images/adv2.png'
+import adv1 from '../assets/images/adv1.png'
 const ProjectsSection = styled.section`
   padding: 100px 50px;
   background-color: #0f0f0f;
@@ -26,12 +29,26 @@ const ProjectsGrid = styled.div`
 function Projects() {
   const projects = [
     {
-      image: 'project1.jpg',
+      link:'https://comercio2.vercel.app/',
+      image: PetShop,
       title: 'Project 1',
       description: 'A cool frontend project.',
     },
     {
-      image: 'project2.jpg',
+      link:'https://contabil-five.vercel.app/',
+      image: contabilidade,
+      title: 'Project 2',
+      description: 'Another awesome project.',
+    },
+    {
+      link:'https://adevogado2-main.vercel.app/',
+      image: adv2,
+      title: 'Project 2',
+      description: 'Another awesome project.',
+    },
+    {
+      link:'https://adv-main1.vercel.app/',
+      image: adv1,
       title: 'Project 2',
       description: 'Another awesome project.',
     },
@@ -40,11 +57,13 @@ function Projects() {
 
   return (
     <ProjectsSection id="projects">
-      <h2>My Projects</h2>
+      <h2>Meus projetos.</h2>
+      <p>Todos criados com React.JS, styled-components,flex-box e Router.</p>
       <ProjectsGrid>
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
+            link={project.link}
             image={project.image}
             title={project.title}
             description={project.description}
