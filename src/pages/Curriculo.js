@@ -105,6 +105,8 @@ const ContactInfo = styled.div`
 `;
 
 const Curriculo = () => {
+
+  
   return (
     <CurriculoContainer>
       <ContentWrapper>

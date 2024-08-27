@@ -9,6 +9,7 @@ const Header = styled.header`
   align-items: center;
   padding: 20px 50px;
   background-color: #0a0a0a;
+  position: relative;
 
   @media (max-width: 768px) {
     padding: 10px 20px;
@@ -41,6 +42,8 @@ const Nav = styled.nav`
     padding: 20px;
     box-sizing: border-box;
     z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-100%)')};
   }
 `;
 
@@ -66,7 +69,7 @@ const StyledLink = styled(Link)`
     box-sizing: border-box;
 
     &:hover {
-        background-color: #0a0a0a;
+      background-color: #0a0a0a;
       color: ${({ theme }) => theme.colors.primary};
       border-color: ${({ theme }) => theme.colors.primary};
     }
@@ -100,23 +103,19 @@ const HeaderComponent = () => {
   return (
     <Header>
       <Logo>Josuel B. Mroczko</Logo>
-      <Hamburger onClick={toggleMenu}>
+      <Hamburger onClick={toggleMenu} aria-label="Toggle menu">
         <Line />
         <Line />
         <Line />
       </Hamburger>
       <Nav isOpen={isOpen}>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/projects">Projetos</StyledLink>
-        <StyledLink to="/contact">Contato</StyledLink>
-        <StyledLink to="/curriculo">Curriculo</StyledLink>
+        <StyledLink to="/" onClick={() => setIsOpen(false)}>Home</StyledLink>
+        <StyledLink to="/projects" onClick={() => setIsOpen(false)}>Projetos</StyledLink>
+        <StyledLink to="/contact" onClick={() => setIsOpen(false)}>Contato</StyledLink>
+        <StyledLink to="/curriculo" onClick={() => setIsOpen(false)}>Currículo</StyledLink>
       </Nav>
     </Header>
-
- 
   );
 };
 
 export default HeaderComponent;
-
-     
