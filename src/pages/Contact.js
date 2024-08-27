@@ -85,22 +85,22 @@ const Contact = () => {
 
   return (
     <ContactSection id="contact">
-      <h2>Contact Me</h2>
+      <h2>Contato</h2>
       <Form onSubmit={sendEmail}>
         <Input
           type="text"
-          placeholder="Your Name"
+          placeholder="Seu Nome"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <Input
           type="email"
-          placeholder="Your Email"
+          placeholder="Seu Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <TextArea
-          placeholder="Your Message"
+          placeholder="Sua Menssagem"
           value={message}
           onChange={(e) => {
             setMessage(e.target.value);
@@ -109,7 +109,7 @@ const Contact = () => {
           }}
           rows={textareaRows}
         />
-        <Button type="submit">Send Message</Button>
+        <Button type="submit">Enviar Menssagem</Button>
       </Form>
     </ContactSection>
   );
