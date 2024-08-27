@@ -63,6 +63,9 @@ const StyledTextContainer = styled.div`
       opacity: 1; /* Termina visível */
     }
   }
+  @media (max-width:620px){
+    font-size: 1rem;
+  }
 `;
 
 const CustomParagraph = styled.p`
@@ -104,7 +107,7 @@ function Home() {
           esconderCursor 
         />
       </StyledTextContainer>
-      <CustomParagraph>"Aqui estão alguns dos meus projetos que foram comprados."</CustomParagraph>
+      <CustomParagraph>"Aqui estão alguns dos meus projetos que estão ativamente hospedados e disponíveis online."</CustomParagraph>
       <ProjectsGrid>
         {projects.map((project, index) => (
           <ProjectCard
