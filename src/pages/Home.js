@@ -7,7 +7,7 @@ import projetoPolitico from '../assets/images/projetoPolitico.png';
 import { MaquinaDeEscrever } from '../components/maquinaDeEscrever';  
 
 const HomeSection = styled.section`
-  padding: 100px 50px;
+  
   text-align: center;
   background: linear-gradient(135deg, #00BCD4 0%, #00BFAE 100%);
   color: white; /* Cor do texto */
@@ -66,7 +66,8 @@ const StyledTextContainer = styled.div`
 `;
 
 const CustomParagraph = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  padding-top: 10px;
   color: #ffffff;
   margin: 20px 0;
   font-style: italic;

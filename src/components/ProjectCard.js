@@ -20,7 +20,7 @@ const Card = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  max-height: 190px;
+  max-height: 180px;
   object-fit: cover;
   transition: transform 0.3s ease;
  
