@@ -110,7 +110,7 @@ const Curriculo = () => {
   return (
     <CurriculoContainer>
       <ContentWrapper>
-        <Title>Currículo de Josuel B. Mroczko</Title>
+        <Title>CV. Josuel B. Mroczko</Title>
 
         <Section>
           <SectionTitle>Formação Acadêmica</SectionTitle>
