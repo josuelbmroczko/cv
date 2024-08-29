@@ -7,12 +7,15 @@ import adv2 from '../assets/images/adv2.png'
 import adv1 from '../assets/images/adv1.png'
 import simples from '../assets/images/simples.png'
 import academia from '../assets/images/academia.png'
+import { useEffect } from 'react';
 
 
 const ProjectsSection = styled.section`
   padding: 100px 50px;
   background-color: #0f0f0f;
+  font-family: "Space Mono", monospace;
 
+  font-style: normal;
   @media (max-width: 768px) {
     padding: 50px 20px;
   }
@@ -70,7 +73,9 @@ function Projects() {
     },
     // Adicione mais projetos aqui
   ];
-
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <ProjectsSection id="projects">
       <h2>Meus projetos.</h2>

@@ -61,7 +61,7 @@ const SliderDeTecnologias = () => {
     slidesToShow: 3,       // Número de slides exibidos ao mesmo tempo
     slidesToScroll: 1,     // Número de slides a serem rolados por vez
     autoplay: true,        // Habilita o autoplay
-    autoplaySpeed: 2000,   // Velocidade do autoplay (2000 ms = 2 segundos)
+    autoplaySpeed: 1000,   // Velocidade do autoplay (2000 ms = 2 segundos)
     arrows: true,          // Exibe setas de navegação
     pauseOnHover: true,    // Pausa o autoplay ao passar o mouse sobre o carrossel
     responsive: [
@@ -82,7 +82,7 @@ const SliderDeTecnologias = () => {
 
   return (
     <SliderContainer>
-      <span>Ferramentas utilizadas</span>
+      <span>Habilidades</span>
       <Slider {...settings}>
         <div>
           <img src={html} alt="HTML" />

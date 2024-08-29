@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 const CurriculoContainer = styled.section`
@@ -9,7 +9,7 @@ const CurriculoContainer = styled.section`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-
+text-decoration:none;
   @media (max-width: 768px) {
     padding: 20px;
   }
@@ -106,7 +106,9 @@ const ContactInfo = styled.div`
 
 const Curriculo = () => {
 
-  
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <CurriculoContainer>
       <ContentWrapper>
@@ -159,15 +161,16 @@ const Curriculo = () => {
           <SectionTitle>Informações de Contato</SectionTitle>
           <ContactInfo>
             Data de nascimento: 18/08/1997, 26 anos<br />
-            Endereço: Rua Jordão de Moraes, 878 - Ribeirão Pires, SP, Brasil<br />
+            Endereço:R. Ubaldo de Abreu, 82 - Vila Água Funda São Paulo, SP.<br />
             Telefone: (11) 99309-3681<br />
-            Email: <a href="mailto:josuelbeserramroczko@outloo.com">josuelbeserramroczko@outloo.com</a><br />
+            Email: <a href="mailto:josuelbeserramroczko@outloo.com">josuelbeserramroczko@outlook.com</a><br />
             LinkedIn: <a href="https://linkedin.com/in/josuel-mroczko-677b36183/" target="_blank">linkedin.com/in/josuel-mroczko-677b36183/</a><br />
             Loja de Sites: <a href="https://www.systemloquaz.com/" target="_blank">https://www.systemloquaz.com/</a><br />
             Contabil: <a href="https://contabil-five.vercel.app/" target="_blank">https://contabil-five.vercel.app/</a><br />
             Certificado Completo Alura: <a href="https://cursos.alura.com.br/user/josuelbeserramroczko/fullCertificate/cd9e7955b308746f1eac0ed6fe1a784d" target="_blank">Certificado Alura</a>
           </ContactInfo>
         </Section>
+        <a href='https://1drv.ms/b/s!AoErj53_Ws5zlZdvarc-LTUTyimilQ?e=mCuwCe' target='blank'>Abrir no OneDrive</a>
       </ContentWrapper>
     </CurriculoContainer>
   );

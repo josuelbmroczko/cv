@@ -12,10 +12,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     background-color: #0a0a0a;
     color: #fff;
+  
   }
 
   a {
     text-decoration: none;
+    font-family: "Space Mono", monospace;
+  font-weight: 700;   font-style: normal;
   }
 `;
 

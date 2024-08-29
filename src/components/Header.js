@@ -1,5 +1,5 @@
 // src/components/Header.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -10,7 +10,9 @@ const Header = styled.header`
   padding: 20px 50px;
   background-color: #0a0a0a;
   position: relative;
+  font-family: "Space Mono", monospace;
 
+  font-style: normal;
   @media (max-width: 768px) {
     padding: 10px 20px;
   }
@@ -49,13 +51,15 @@ const Nav = styled.nav`
 
 const StyledLink = styled(Link)`
   color: #fff;
-  text-decoration: none;
+   
   font-size: 1rem;
   padding: 10px 20px;
   border-radius: 5px;
   border: 2px solid transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Space Mono", monospace;
 
+  font-style: normal;
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
@@ -100,6 +104,10 @@ const HeaderComponent = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+  
   return (
     <Header>
       <Logo>Josuel B. Mroczko</Logo>

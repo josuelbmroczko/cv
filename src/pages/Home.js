@@ -57,7 +57,9 @@ top: 10px;
   background: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semitransparente */
   border-radius: 10px; /* Bordas arredondadas */
   animation: fadeIn 2s ease-in-out; /* Animação para o texto aparecer suavemente */
+  font-family: "Space Mono", monospace;
 
+  font-style: normal;
   @keyframes fadeIn {
     from {
       opacity: 0; /* Começa invisível */
@@ -72,12 +74,18 @@ top: 10px;
 `;
 
 const CustomParagraph = styled.p`
+position: relative;
   font-size: 1.5rem;
   padding-top: 10px;
   color: #ffffff;
   margin: 20px 0;
-  font-style: italic;
+   width: 80%;
+  left: 10%;
   line-height: 1.5;
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
 `;
 
 function Home() {
@@ -85,19 +93,19 @@ function Home() {
     {
       link: 'https://www.systemloquaz.com/',
       image: systemLoquazImg,
-      title: 'Projeto 1',
+      title: 'Site pessoal de vendas',
       description: 'Esse foi meu primeiro grande projeto que me resultou nos meus primeiros clientes',
     },
     {
       link: 'https://www.projetogeraaoresgate.com/',
       image: projetoGeracaoResgate,
-      title: 'Projeto 2',
+      title: 'Trabalho voluntário',
       description: 'Projeto Doado para a Ong `Projeto Geração Resgate`',
     },
     {
       link: 'https://www.professoredsonconstantino.com.br/',
       image: projetoPolitico,
-      title: 'Projeto 3',
+      title: 'Projeto POLITICO',
       description: 'Projeto POLITICO',
     },
   ];
@@ -105,9 +113,17 @@ function Home() {
   return (
     <HomeSection id="home">
       <StyledTextContainer>
+        
         <MaquinaDeEscrever 
-          text="Sou um Desenvolvedor Front-end com foco principal em React.js, apaixonado por criar experiências web envolventes. Tenho proficiência em HTML, CSS e uma boa base em JavaScript. Estou constantemente aprimorando minhas habilidades para construir soluções inovadoras e de alta qualidade." 
+          text="Olá sou o josuel e gostaria de me apresentar melhor!" 
           esconderCursor 
+        />
+      </StyledTextContainer>
+      <StyledTextContainer>
+        
+        <MaquinaDeEscrever 
+          text="Sou um Desenvolvedor Front-end com foco principal em React.js, apaixonado por criar experiências web envolventes. Tenho proficiência em HTML, CSS e uma boa base em JavaScript. Estou constantemente aprimorando minhas habilidades para construir soluções inovadoras e de alta qualidade." delay={6000}
+            
         />
       </StyledTextContainer>
       <CustomParagraph>"Aqui estão alguns dos meus projetos que estão ativamente hospedados e disponíveis online."</CustomParagraph>

@@ -1,5 +1,5 @@
 // src/pages/Contact.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 import Button from '../components/Button';
@@ -83,6 +83,9 @@ const Contact = () => {
       });
   };
 
+    useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <ContactSection id="contact">
       <h2>Contato</h2>
