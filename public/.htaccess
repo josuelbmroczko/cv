@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /nova1/
+RewriteBase 
 
 # Redireciona todas as requisições para o index.html exceto arquivos existentes
 RewriteCond %{REQUEST_FILENAME} !-f
