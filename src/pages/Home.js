@@ -1,4 +1,6 @@
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import ScrollReveal from 'scrollreveal';
 import ProjectCard from '../components/ProjectCard';
 import { Link } from 'react-router-dom';
 import systemLoquazImg from '../assets/images/SystemLoquaz.png';
@@ -8,11 +10,10 @@ import { MaquinaDeEscrever } from '../components/maquinaDeEscrever';
 import SliderDeTecnologias from '../components/sliderDeTecnologias';
 
 const HomeSection = styled.section`
-  
   text-align: center;
   background: linear-gradient(135deg, #00BCD4 0%, #00BFAE 100%);
-  color: white; /* Cor do texto */
-  min-height: 100vh; /* Garantir altura mínima da seção */
+  color: white;
+  min-height: 100vh;
   position: relative;
 `;
 
@@ -21,7 +22,8 @@ const ProjectsGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 50px;
-  padding: 0 20px; /* Adiciona um padding lateral para o grid */
+  padding: 0 20px;
+ 
 `;
 
 const StyledLink = styled(Link)`
@@ -35,7 +37,8 @@ const StyledLink = styled(Link)`
   margin-top: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, background-color 0.3s ease;
-margin-bottom: 30px;
+  margin-bottom: 30px;
+
   &:hover {
     transform: translateY(-3px);
     background-color: #0097A7;
@@ -43,43 +46,45 @@ margin-bottom: 30px;
 `;
 
 const StyledTextContainer = styled.div`
-position: relative;
-top: 10px;
+  position: relative;
+  top: 30px;
   font-size: 1.5rem;
   color: #ffffff;
   margin: 20px 0;
+   
   font-weight: 600;
   text-align: center;
-  max-width: 800px; /* Limita a largura máxima do texto */
-  margin: 0 auto; /* Centraliza o texto */
-  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semitransparente */
-  border-radius: 10px; /* Bordas arredondadas */
-  animation: fadeIn 2s ease-in-out; /* Animação para o texto aparecer suavemente */
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  animation: fadeIn 2s ease-in-out;
   font-family: "Space Mono", monospace;
-
   font-style: normal;
+
   @keyframes fadeIn {
     from {
-      opacity: 0; /* Começa invisível */
+      opacity: 0;
     }
     to {
-      opacity: 1; /* Termina visível */
+      opacity: 1;
     }
   }
+
   @media (max-width:620px){
     font-size: 1rem;
   }
 `;
 
 const CustomParagraph = styled.p`
-position: relative;
+  position: relative;
   font-size: 1.5rem;
   padding-top: 10px;
   color: #ffffff;
   margin: 20px 0;
-   width: 80%;
+  width: 80%;
   left: 10%;
   line-height: 1.5;
 
@@ -110,38 +115,47 @@ function Home() {
     },
   ];
 
+  useEffect(() => {
+    ScrollReveal().reveal('.project-card', {
+      origin: 'right',
+      distance: '100px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: true,
+      interval: 200,
+    });
+  }, []);
+
   return (
     <HomeSection id="home">
       <StyledTextContainer>
-        
         <MaquinaDeEscrever 
           text="Olá sou o josuel e gostaria de me apresentar melhor!" 
           esconderCursor 
         />
+         
       </StyledTextContainer>
       <StyledTextContainer>
-        
         <MaquinaDeEscrever 
           text="Sou um Desenvolvedor Front-end com foco principal em React.js, apaixonado por criar experiências web envolventes. Tenho proficiência em HTML, CSS e uma boa base em JavaScript. Estou constantemente aprimorando minhas habilidades para construir soluções inovadoras e de alta qualidade." delay={6000}
-            
         />
       </StyledTextContainer>
       <CustomParagraph>"Aqui estão alguns dos meus projetos que estão ativamente hospedados e disponíveis online."</CustomParagraph>
       <CustomParagraph>Todos criados com React.JS, styled-components,flex-box e Router.</CustomParagraph>
       <ProjectsGrid>
         {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            link={project.link}
-            image={project.image}
-            title={project.title}
-            description={project.description}
-          />
+          <div className="project-card" key={index}>
+            <ProjectCard
+              link={project.link}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+            />
+          </div>
         ))}
       </ProjectsGrid>
       <StyledLink to="/projects">Clique e veja mais Projetos</StyledLink>
-      
-<SliderDeTecnologias/> 
+      <SliderDeTecnologias/> 
     </HomeSection>
   );
 }

@@ -1,5 +1,6 @@
 // src/pages/Projects.js
 import styled from 'styled-components';
+import ScrollReveal from 'scrollreveal';
 import ProjectCard from '../components/ProjectCard';
 import PetShop from '../assets/images/PetShop.png'
 import contabilidade from '../assets/images/contabilidade.png' 
@@ -76,12 +77,25 @@ function Projects() {
   useEffect(()=>{
     window.scrollTo(0,0)
   },[])
+
+
+  useEffect(() => {
+    ScrollReveal().reveal('.project-card', {
+      origin: 'right',
+      distance: '100px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: true,
+      interval: 200,
+    });
+  }, []);
   return (
     <ProjectsSection id="projects">
       <h2>Meus projetos.</h2>
       <p>Todos criados com React.JS, styled-components,flex-box e Router.</p>
       <ProjectsGrid>
         {projects.map((project, index) => (
+          <div className="project-card" key={index}>
           <ProjectCard
             key={index}
             link={project.link}
@@ -89,6 +103,7 @@ function Projects() {
             title={project.title}
             description={project.description}
           />
+          </div>
         ))}
       </ProjectsGrid>
     </ProjectsSection>

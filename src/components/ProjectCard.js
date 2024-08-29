@@ -45,6 +45,10 @@ const Description = styled.p`
 const CardLink = styled.a`
   text-decoration: none;
   color: inherit;
+  height: 350px;
+  @media (max-width:500px) {
+    height: auto;
+  }
 `;
 
 function ProjectCard({ link, image, title, description }) {

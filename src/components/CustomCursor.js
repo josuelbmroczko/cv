@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
- 
 
 const CursorWrapper = styled.div`
   cursor: none; /* Remove o cursor padrão */
@@ -8,6 +7,10 @@ const CursorWrapper = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+
+  @media (max-width: 900px) {
+    cursor: auto; /* Mantém o cursor padrão em telas menores */
+  }
 `;
 
 const RastroCursor = styled.div`
@@ -22,6 +25,10 @@ const RastroCursor = styled.div`
   pointer-events: none; /* Impede a interação com o cursor */
   transition: background 0.3s ease, transform 0.1s ease;
   z-index: 9999;
+
+  @media (max-width: 900px) {
+    display: none; /* Esconde o cursor personalizado em telas menores */
+  }
 `;
 
 const CustomCursor = ({ children }) => {
