@@ -107,12 +107,12 @@ function Home() {
       title: 'Trabalho voluntário',
       description: 'Projeto Doado para a Ong `Projeto Geração Resgate`',
     },
-    {
-      link: 'https://www.professoredsonconstantino.com.br/',
-      image: projetoPolitico,
-      title: 'Projeto POLITICO',
-      description: 'Projeto POLITICO',
-    },
+     //{
+     // link: 'https://www.professoredsonconstantino.com.br/',
+     // image: projetoPolitico,
+      //title: 'Projeto POLITICO',
+     // description: 'Projeto POLITICO',
+   // }, 
   ];
 
   useEffect(() => {
