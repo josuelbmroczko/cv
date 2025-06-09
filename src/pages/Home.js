@@ -8,7 +8,8 @@ import projetoGeracaoResgate from '../assets/images/projetoGeracaoSaude.png';
 import projetoPolitico from '../assets/images/projetoPolitico.png';
 import { MaquinaDeEscrever } from '../components/maquinaDeEscrever';  
 import SliderDeTecnologias from '../components/sliderDeTecnologias';
-
+import  takara from './takara.png';
+import academia from './academia.png';
 const HomeSection = styled.section`
   text-align: center;
   background: linear-gradient(135deg, #00BCD4 0%, #00BFAE 100%);
@@ -95,14 +96,26 @@ const CustomParagraph = styled.p`
 
 function Home() {
   const projects = [
+ {
+      link: 'https://clinicatakara.com.br/',
+      image: takara,
+      title: 'Site clinica takara',
+      description: 'Site para Clínica de Oftalmologia ',
+    },
+ {
+      link: 'https://alphasportconstantino-abc.com.br/',
+      image: academia,
+      title: 'Site academia alphasport',
+      description: 'Site para Academia Alphasport Constantino',
+    },
     {
-      link: 'https://www.systemloquaz.com/',
+      link: 'https://www-systemloquaz-com.vercel.app/',
       image: systemLoquazImg,
       title: 'Site pessoal de vendas',
       description: 'Esse foi meu primeiro grande projeto que me resultou nos meus primeiros clientes',
     },
     {
-      link: 'https://www.projetogeraaoresgate.com/',
+      link: 'https://www-ong-com-main.vercel.app/',
       image: projetoGeracaoResgate,
       title: 'Trabalho voluntário',
       description: 'Projeto Doado para a Ong `Projeto Geração Resgate`',
